@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { Pool } = require('pg');
+const rateLimiter = require('../middleware/rateLimiter');
 
 // Pool configuration for Neon database
 // Explicitly use DATABASE_URL and enable SSL
@@ -25,7 +26,7 @@ router.get('/', async (req, res) => {
 });
 
 // POST /api/reports – submit a new sighting
-router.post('/', async (req, res) => {
+router.post('/', rateLimiter, async (req, res) => {
   const { lat, lng, intensity, notes } = req.body;
 
   // Basic validation

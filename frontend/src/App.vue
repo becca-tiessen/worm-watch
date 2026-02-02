@@ -95,6 +95,16 @@ function handleZoomTo(hotspot) {
     <button v-if="!showForm" class="fab-report" @click="openReportForm()">
       🐛 Report
     </button>
+
+    <!-- Bug report link — bottom-right, subtle -->
+    <a
+      href="https://github.com/becca-tiessen/worm-watch/issues/new"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bug-report-link"
+    >
+      See something wrong? Report a bug, not worms 🐛
+    </a>
   </div>
 </template>
 
@@ -130,5 +140,24 @@ function handleZoomTo(hotspot) {
 @keyframes fab-pulse {
   0%, 100% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
   50%      { transform: scale(1.12); box-shadow: 0 6px 20px rgba(76,175,80,0.5); }
+}
+
+.bug-report-link {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  z-index: 999;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 6px 12px;
+  border-radius: 12px;
+  transition: background 0.2s;
+  pointer-events: auto;
+}
+
+.bug-report-link:hover {
+  background: rgba(0, 0, 0, 0.65);
 }
 </style>

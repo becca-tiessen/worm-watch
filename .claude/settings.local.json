@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash([ -d node_modules ])",
+      "Bash(npm install:*)",
+      "Bash([ -d /Users/rebeccatiessen/worm-watch/frontend/node_modules ])",
+      "Bash(npm start)",
+      "Bash(curl:*)",
+      "Bash(node -e:*)",
+      "Bash(npm run dev:*)"
+    ]
+  }
+}
